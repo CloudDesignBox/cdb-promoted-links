@@ -24,16 +24,16 @@
   div.actionicons .tiles a:hover {background-color:#c1c1c1;	}
   div.actionicons .tiles .tilecontent {
     background: #181647;
-    height: 140px;
-    width: 160px;
+    height: 150px;
+    width: 150px;
     overflow: hidden;
     display: block;
     position:relative;
     background-repeat:no-repeat;
     background-position:center center;
     background-size: cover;
-  
   }
+  .row{display: block;}
 
   @media all
   and (max-width: 790px){
@@ -44,10 +44,6 @@
       min-width:  100px;
       height:100%;
     }
-  }
-  .row {
-    margin-left: -20px;
-    margin-right: 0px;
   }
   .tpmouse{
     cursor:pointer;

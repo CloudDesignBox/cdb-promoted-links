@@ -22,7 +22,8 @@
     "properties": {
       "description": "CloudDesignBoxPromotedLinks",
       "imagelibraryname": "Promoted Links",
-      "tilecolour": "#2a4a95"
+      "tilecolour": "#2a4a95",
+      "tileanimation": true
     }
   }]
 }

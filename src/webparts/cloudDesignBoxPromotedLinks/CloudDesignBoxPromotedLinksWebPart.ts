@@ -2,7 +2,8 @@ import { Version } from '@microsoft/sp-core-library';
 import {
   BaseClientSideWebPart,
   IPropertyPaneConfiguration,
-  PropertyPaneTextField
+  PropertyPaneTextField,
+  PropertyPaneToggle
 } from '@microsoft/sp-webpart-base';
 import { escape } from '@microsoft/sp-lodash-subset';
 //import for rest calls
@@ -21,6 +22,7 @@ export interface ICloudDesignBoxPromotedLinksWebPartProps {
   description: string;
   imagelibraryname: string;
   tilecolour: string;
+  tileanimation: boolean;
 }
 
 export interface ISPLists {
@@ -50,40 +52,44 @@ export default class CloudDesignBoxPromotedLinksWebPartWebPart extends BaseClien
     let html: string = "";
     
     //check if items exist
-    if (items != null){
-      //loop through items and add to html
-      items.forEach((item: ISPList) => {
-        let cdbcolour: string = this.properties.tilecolour;
-        let cdblaunchbeh: string = "";
-        let cdbbackgimage:string = "";
-        let cdbdescription:string = "Click here";
-        //validate launch beha
-        if(item.LaunchBehavior != "New tab"){
-          cdblaunchbeh=`window.open('${item.LinkLocation['Url']}','_blank');`;
-        }else{
-          cdblaunchbeh=`location.href='${item.LinkLocation['Url']}';`;
-        }
-        //validate bg image
-        if(item.BackgroundImageLocation != null){
-          cdbbackgimage=item.BackgroundImageLocation['Url'];
-        }
-        //validate desc
-        if(item.Description != null){
-          cdbdescription=item.Description;
-        }
-        html+=`
-        <div class="${styles.tiles}">
-          <div class="${styles.tilecontent} ${styles.tpmouse}" style="background-color:${cdbcolour};background-image:url('${cdbbackgimage}');position:relative;" onclick="${cdblaunchbeh}">
-            <div class="${styles.cdbdescholder}">
-              <div class="${styles.cdbdescholdertitle}"><span>${item.Title}</span></div>
-              <div class="${styles.cdbdescholderdesc}"><span>${cdbdescription}</span></div>
+    if (typeof(items) != "undefined"){
+      //check if there are any items
+      if (items.length > 0){
+        //loop through items and add to html
+        items.forEach((item: ISPList) => {
+          let cdbcolour: string = this.properties.tilecolour;
+          let cdblaunchbeh: string = "";
+          let cdbbackgimage:string = "";
+          let cdbdescription:string = "Click here";
+          //validate launch beha
+          if(item.LaunchBehavior != "New tab"){
+            cdblaunchbeh=`window.open('${item.LinkLocation['Url']}','_blank');`;
+          }else{
+            cdblaunchbeh=`location.href='${item.LinkLocation['Url']}';`;
+          }
+          //validate bg image
+          if(item.BackgroundImageLocation != null){
+            cdbbackgimage=item.BackgroundImageLocation['Url'];
+          }
+          //validate desc
+          if(item.Description != null){
+            cdbdescription=item.Description;
+          }
+          html+=`
+          <div class="${styles.tiles}">
+            <div class="${styles.tilecontent} ${styles.tpmouse}" style="background-color:${cdbcolour};background-image:url('${cdbbackgimage}');position:relative;" onclick="${cdblaunchbeh}">
+              <div class="${styles.cdbdescholder}">
+                <div class="${styles.cdbdescholdertitle}"><span>${item.Title}</span></div>
+                <div class="${styles.cdbdescholderdesc}"><span>${cdbdescription}</span></div>
+              </div>
             </div>
-          </div>
-        </div>`;
-      });
-
+          </div>`;
+        });
+      }else{
+        html = `There are no links in this list.<br /><a href="${escape(this.context.pageContext.web.absoluteUrl)}/Lists/Promoted%20Links/AllItems.aspx" class="${styles.cdbbutton}">Add Links</a>`;                
+      }
     }else{
-      html = `There are no items in this list.<br /><a href="${escape(this.context.pageContext.web.absoluteUrl)}/lists/${escape(this.properties.imagelibraryname)}/allitems.aspx" class="${styles.cdbbutton}">Add Items</a>`;
+        html = `This list does not exist. <br /><a href="${escape(this.context.pageContext.web.absoluteUrl)}/_layouts/15/viewlsts.aspx" class="${styles.cdbbutton}">Manage Lists</a>`;
     }
 
     //render results
@@ -94,15 +100,20 @@ export default class CloudDesignBoxPromotedLinksWebPartWebPart extends BaseClien
     jQuery(document).ready(function() {
       jQuery(`.${styles.cdbsubjecttiles}`).show();
     });
-    jQuery( document ).ready(function() {
-      jQuery("." + styles.tilecontent)
-        .mouseenter(function() {
-          jQuery(this).children("." + styles.cdbdescholder).children("." + styles.cdbdescholderdesc).slideToggle("slow");
-      })
-        .mouseleave(function() {
-          jQuery(this).children("." + styles.cdbdescholder).children("." + styles.cdbdescholderdesc).slideToggle("slow");
+    //only load animation if prop is true
+    if(this.properties.tileanimation == true)
+    {
+      jQuery( document ).ready(function() {
+        jQuery("." + styles.tilecontent)
+          .mouseenter(function() {
+            jQuery(this).children("." + styles.cdbdescholder).children("." + styles.cdbdescholderdesc).slideToggle("slow");
+        })
+          .mouseleave(function() {
+            jQuery(this).children("." + styles.cdbdescholder).children("." + styles.cdbdescholderdesc).slideToggle("slow");
+        });
       });
-    });
+    }
+    
     //end
   }
 
@@ -142,6 +153,11 @@ export default class CloudDesignBoxPromotedLinksWebPartWebPart extends BaseClien
                 }),
                 PropertyPaneTextField('tilecolour', {
                   label: strings.TileColour
+                }),
+                PropertyPaneToggle('tileanimation', {
+                  label: strings.TileAnimation,
+                  onText: 'On',
+                  offText: 'Off'
                 })
               ]
             }
@@ -151,3 +167,11 @@ export default class CloudDesignBoxPromotedLinksWebPartWebPart extends BaseClien
     };
   }
 }
+
+
+// To do:
+// option to pick backgorund size
+// test everything
+//show drop down of promoted lists in web part properties
+// create a new promoted list if it doesnt exist?
+//restrict colour picker

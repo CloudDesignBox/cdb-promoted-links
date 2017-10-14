@@ -3,6 +3,7 @@ define([], function() {
     "PropertyPaneDescription": "Add your promoted list name below to get started",
     "BasicGroupName": "Settings",
     "ImageLibraryFieldLabel": "Promoted Links List Name",
-    "TileColour": "Tile Colour"
+    "TileColour": "Tile Colour",
+    "TileAnimation": "Hover over animation"
   }
 });

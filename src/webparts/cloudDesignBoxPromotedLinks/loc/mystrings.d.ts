@@ -3,6 +3,7 @@ declare interface ICloudDesignBoxPromotedLinksWebPartStrings {
   BasicGroupName: string;
   ImageLibraryFieldLabel: string;
   TileColour: string;
+  TileAnimation: string;
 }
 
 declare module 'CloudDesignBoxPromotedLinksWebPartStrings' {
