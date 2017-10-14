@@ -1,0 +1,12 @@
+{
+  "$schema": "https://dev.office.com/json-schemas/spfx-build/package-solution.schema.json",
+  "solution": {
+    "name": "cloud-design-box-promoted-links-client-side-solution",
+    "id": "c14a6350-5b00-4ce9-bb18-3ffbcd18b372",
+    "version": "1.0.0.0",
+    "skipFeatureDeployment": true
+  },
+  "paths": {
+    "zippedPackage": "solution/cloud-design-box-promoted-links.sppkg"
+  }
+}

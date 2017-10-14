@@ -1,0 +1,18 @@
+{
+  "$schema": "https://dev.office.com/json-schemas/spfx-build/config.2.0.schema.json",
+  "version": "2.0",
+  "bundles": {
+    "cloud-design-box-promoted-links-web-part": {
+      "components": [
+        {
+          "entrypoint": "./lib/webparts/cloudDesignBoxPromotedLinks/CloudDesignBoxPromotedLinksWebPart.js",
+          "manifest": "./src/webparts/cloudDesignBoxPromotedLinks/CloudDesignBoxPromotedLinksWebPart.manifest.json"
+        }
+      ]
+    }
+  },
+  "externals": {},
+  "localizedResources": {
+    "CloudDesignBoxPromotedLinksWebPartStrings": "lib/webparts/cloudDesignBoxPromotedLinks/loc/{locale}.js"
+  }
+}
