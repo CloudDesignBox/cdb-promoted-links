@@ -1,52 +1,80 @@
 .cloudDesignBoxPromotedLinks {
-  .container {
-    max-width: 700px;
-    margin: 0px auto;
-    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 25px 50px 0 rgba(0, 0, 0, 0.1);
+  .cdbsubjecttiles{
+    width: 100%;
+    display: none;
+  }
+  div.actionicons .tiles {
+    margin: 0 auto;
+    padding: 0;
+    overflow: hidden;
+    display:inline-block;
+    padding-right:10px;
+    padding-bottom:10px;
   }
 
-  .row {
-    padding: 20px;
+  .cdbdescholder{
+    background-color:rgba(0,0,0,0.8);   
+    display:block;
+    position:absolute;
+    bottom:0px;
+    color:#fff;
+    font-size:13px;
+    width:100%;
+  }
+  div.actionicons .tiles a:hover {background-color:#c1c1c1;	}
+  div.actionicons .tiles .tilecontent {
+    background: #181647;
+    height: 140px;
+    width: 160px;
+    overflow: hidden;
+    display: block;
+    position:relative;
+    background-repeat:no-repeat;
+    background-position:center center;
+    background-size: cover;
+  
   }
 
-  .listItem {
-    max-width: 715px;
-    margin: 5px auto 5px auto;
-    box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.2), 0 25px 50px 0 rgba(0, 0, 0, 0.1);
-  }
-
-  .button {
-    // Our button
-    text-decoration: none;
-    height: 32px;
-
-    // Primary Button
-    min-width: 80px;
-    background-color: "[theme:themePrimary, default:#0078d7]";
-    border-color: "[theme:themePrimary, default:#0078d7]";
-    color: #ffffff;
-
-    // Basic Button
-    outline: transparent;
-    position: relative;
-    font-family: "Segoe UI WestEuropean","Segoe UI",-apple-system,BlinkMacSystemFont,Roboto,"Helvetica Neue",sans-serif;
-    -webkit-font-smoothing: antialiased;
-    font-size: 14px;
-    font-weight: 400;
-    border-width: 0;
-    text-align: center;
-    cursor: pointer;
-    display: inline-block;
-    padding: 0 16px;
-
-    .label {
-      font-weight: 600;
-      font-size: 14px;
-      height: 32px;
-      line-height: 32px;
-      margin: 0 4px;
-      vertical-align: top;
-      display: inline-block;
+  @media all
+  and (max-width: 790px){
+    div.actionicons .tiles .tilecontent {
+      background: #0072c6;
+      background-repeat:no-repeat;
+      background-position:center center;
+      min-width:  100px;
+      height:100%;
     }
+  }
+  .row {
+    margin-left: -20px;
+    margin-right: 0px;
+  }
+  .tpmouse{
+    cursor:pointer;
+  }
+  .cdbclear{clear:both;}
+  a.cdbbutton, a.cdbbutton:visited, a.cdbbutton:hover, a.cdbbutton:active, a.cdbbutton:link {
+    margin-top:5px;
+    color: white;
+    display: inline-block;
+    width: auto;
+    padding:5px;
+    border-radius: 4px;
+    text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+    background-color: #0269c3;
+    text-decoration: none;
+  }
+  a.cdbbutton:hover{
+    background-color: #0074d9;
+  }
+  .cdbdescholdertitle{
+    display: block;
+    padding:15px;
+  }
+  .tilecontent .cdbdescholderdesc{
+    display:none;
+    padding:15px;
+    padding-top:0px;
+    height: 100%;
   }
 }

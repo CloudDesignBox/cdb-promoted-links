@@ -11,7 +11,12 @@
       ]
     }
   },
-  "externals": {},
+  "externals": {
+    "jquery": {
+      "path": "https://code.jquery.com/jquery-2.1.1.min.js",
+      "globalName": "jQuery"
+    }
+  },
   "localizedResources": {
     "CloudDesignBoxPromotedLinksWebPartStrings": "lib/webparts/cloudDesignBoxPromotedLinks/loc/{locale}.js"
   }

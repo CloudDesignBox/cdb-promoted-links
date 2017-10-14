@@ -20,7 +20,9 @@
     "description": { "default": "Displays promoted links like they did in classic mode (only better)!" },
     "officeFabricIconFontName": "Page",
     "properties": {
-      "description": "CloudDesignBoxPromotedLinks"
+      "description": "CloudDesignBoxPromotedLinks",
+      "imagelibraryname": "Promoted Links",
+      "tilecolour": "#2a4a95"
     }
   }]
 }
