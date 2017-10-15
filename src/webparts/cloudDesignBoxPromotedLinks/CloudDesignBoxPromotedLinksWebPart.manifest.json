@@ -16,14 +16,15 @@
   "preconfiguredEntries": [{
     "groupId": "5c03119e-3074-46fd-976b-c60198311f70", // Other
     "group": { "default": "Other" },
-    "title": { "default": "CloudDesignBoxPromotedLinks" },
+    "title": { "default": "Promoted Links by Cloud Design Box" },
     "description": { "default": "Displays promoted links like they did in classic mode (only better)!" },
-    "officeFabricIconFontName": "Page",
+    "officeFabricIconFontName": "Tiles",
     "properties": {
-      "description": "CloudDesignBoxPromotedLinks",
+      "description": "Cloud Design Box Promoted Links",
       "imagelibraryname": "Promoted Links",
-      "tilecolour": "#2a4a95",
-      "tileanimation": true
+      "tilecolour": "#28a1d9",
+      "tileanimation": true,
+      "backgroundsize": "50%"
     }
   }]
 }

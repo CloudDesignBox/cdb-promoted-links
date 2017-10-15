@@ -1,9 +1,11 @@
 define([], function() {
   return {
-    "PropertyPaneDescription": "Add your promoted list name below to get started",
-    "BasicGroupName": "Settings",
+    "PropertyPaneDescription": "Promoted Links Web Part by Cloud Design Box Ltd https://www.clouddesignbox.co.uk",
+    "BasicGroupName": "List",
+    "AdvancedGroupName": "Advanced Settings",
     "ImageLibraryFieldLabel": "Promoted Links List Name",
-    "TileColour": "Tile Colour",
-    "TileAnimation": "Hover over animation"
+    "TileColour": "Tile Background Colour",
+    "TileAnimation": "Hover Animation",
+    "BackgroundSizeFieldLabel": "Background Image Size"
   }
 });
