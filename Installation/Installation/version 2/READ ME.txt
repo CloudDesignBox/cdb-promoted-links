@@ -1,6 +1,0 @@
-To Install:
-
-•	Upload folder “CDBPromotedLinks” (including the folder itself) into the SiteAssets library at the root site collection (e.g. contoso.sharepoint.com/siteassets). This is so that it doesn’t use a CDN.
-•	Upload the “cloud-design-box-promoted-links.sppkg” file to the AppCatalog, tick the box to make available on all site collections.
-
-
