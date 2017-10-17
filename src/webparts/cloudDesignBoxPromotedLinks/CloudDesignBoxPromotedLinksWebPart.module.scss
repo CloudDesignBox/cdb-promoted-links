@@ -34,16 +34,6 @@
   }
   .row{display: block;}
 
-  @media all
-  and (max-width: 790px){
-    div.actionicons .tiles .tilecontent {
-      background: #0072c6;
-      background-repeat:no-repeat;
-      background-position:center center;
-      min-width:  100px;
-      height:100%;
-    }
-  }
   .tpmouse{
     cursor:pointer;
   }

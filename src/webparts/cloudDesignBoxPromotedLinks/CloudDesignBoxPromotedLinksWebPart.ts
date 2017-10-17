@@ -107,7 +107,7 @@ export default class CloudDesignBoxPromotedLinksWebPartWebPart extends BaseClien
           let cdbbackgimage:string = "";
           let cdbdescription:string = "Click here";
           //validate launch beha
-          if(item.LaunchBehavior != "New tab"){
+          if(item.LaunchBehavior == "New tab"){
             cdblaunchbeh=`window.open('${item.LinkLocation['Url']}','_blank');`;
           }else{
             cdblaunchbeh=`location.href='${item.LinkLocation['Url']}';`;
