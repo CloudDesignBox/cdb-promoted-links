@@ -2,7 +2,7 @@
 
 <h1>Download and install version 2</h1>
 
-<p>a href="https://github.com/CloudDesignBox/cdb-promoted-links/blob/master/InstallationV1.zip">Click here to download install files</a></p>
+<p><a href="https://github.com/CloudDesignBox/cdb-promoted-links/blob/master/InstallationV1.zip">Click here to download install files</a></p>
 
 <b>Installation instructions</b>
 - Unzip the file and open the V2 installation folder
