@@ -1,15 +1,19 @@
-## cloud-design-box-promoted-links
+<h1>Cloud Design Box Promoted Links Web Part</h1>
+<p>This web part replicates the classic Promoted Links Web Part but with added features such as web part properties to change the background colour, size of background image and to select which promoted link list to use. </p>
+<p>For more information onthe full Cloud Design Box learning platform for modern SharePoint or custom workflows and design, <a href="https://www.clouddesignbox.co.uk">Contact us via the website.</a> </p>
+<img src="https://github.com/CloudDesignBox/cdb-promoted-links/blob/master/preview.gif" alt="preview" />
 
-<h1>Download and install version 2</h1>
+<h1>Download and install latest version</h1>
 
 <p><a href="https://github.com/CloudDesignBox/cdb-promoted-links/blob/master/InstallationV1.zip">Click here to download install files</a></p>
 
 <b>Installation instructions</b>
-- Unzip the file and open the V2 installation folder
--	Upload folder “CDBPromotedLinks” (including the folder itself) into the SiteAssets library at the root site collection (e.g. contoso.sharepoint.com/siteassets). This is so that it doesn’t use a CDN.
--	Upload the “cloud-design-box-promoted-links.sppkg” file to the AppCatalog, tick the box to make available on all site collections.
-This is where you include your WebPart documentation.
+<p>- Unzip the file and open the V2 installation folder</p>
+<p>-	Upload folder “CDBPromotedLinks” (including the folder itself) into the SiteAssets library at the root site collection (e.g. contoso.sharepoint.com/siteassets). This is so that it doesn’t use a CDN.</p>
+<p>-	Upload the “cloud-design-box-promoted-links.sppkg” file to the AppCatalog, tick the box to make available on all site collections.
+This is where you include your WebPart documentation.</p>
 
+<h1>Working with the code</h1>
 ### Building the code
 
 ```bash
