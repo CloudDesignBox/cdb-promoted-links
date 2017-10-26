@@ -9,9 +9,9 @@
 
 <b>Installation instructions</b>
 <p>- Unzip the file and open the installation folder</p>
-<p>-	Upload folder “CDBPromotedLinks” (including the folder itself) into the SiteAssets library at the root site collection (e.g. contoso.sharepoint.com/siteassets). This is so that it doesn’t use a CDN.</p>
+<p>-	Upload folder “CDBPromotedLinks” (including the folder itself) into the SiteAssets library at the root site collection (e.g. contoso.sharepoint.com/siteassets).</p>
 <p>-	Upload the “cloud-design-box-promoted-links.sppkg” file to the AppCatalog, tick the box to make available on all site collections.
-This is where you include your WebPart documentation.</p>
+</p>
 
 <h1>Working with the code</h1>
 ### Building the code
