@@ -5,4 +5,4 @@ To Install:
 
 
 Upgrades:
-Replace the current files following the install steps above. Please note that upgrading from version 2 or before to version 3 will require you to remove and add the web parts to the page again (due to the large configuration changes) otherwise your web part will appear blank.
+Replace the current files following the install steps above. Check in the sppkg file after overwriting. Refresh browser cache and reopen browser to see changes.

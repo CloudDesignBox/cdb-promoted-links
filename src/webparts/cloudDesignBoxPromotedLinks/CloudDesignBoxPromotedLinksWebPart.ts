@@ -130,6 +130,9 @@ export default class CloudDesignBoxPromotedLinksWebPartWebPart extends BaseClien
           if(this.properties.themecolour==true){
             cdbcolour=``;
           }
+          if(this.properties.setwidth==null || typeof this.properties.setwidth === 'undefined'){
+            this.properties.setwidth="150px";
+          }
           html+=`<div style="width:${this.properties.setwidth};display:inline-block;" class="${styles.mobiletile}">
             <div>
               <div class="${styles.tiles}">

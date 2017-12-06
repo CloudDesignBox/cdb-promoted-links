@@ -13,7 +13,7 @@
 <p>-	Upload the “cloud-design-box-promoted-links.sppkg” file to the AppCatalog, tick the box to make available on all site collections.
 </p>
 <b>Updating instructions</b>
-<p>Follow the installation instructions above but replace all the files and check in the sppkg file after upload. Please note that upgrading to version 3 will require you to remove and add the web parts onto the page (due to the large configuration and rewrite).</p>
+<p>Follow the installation instructions above but replace all the files and check in the sppkg file after upload. </p>
 
 <h1>Working with the code</h1>
 ### Building the code
