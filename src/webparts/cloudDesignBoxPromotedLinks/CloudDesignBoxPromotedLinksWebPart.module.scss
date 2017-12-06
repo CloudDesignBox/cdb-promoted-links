@@ -1,3 +1,4 @@
+@import '../../sharedresources/themes.module.scss';
 .cloudDesignBoxPromotedLinks {
   .cdbsubjecttiles{
     width: 100%;
@@ -7,13 +8,13 @@
     margin: 0 auto;
     padding: 0;
     overflow: hidden;
-    display:inline-block;
-    padding-right:10px;
+    display:block;
+    padding-right:5px;
+    padding-left:5px;
     padding-bottom:10px;
   }
-
   .cdbdescholder{
-    background-color:rgba(0,0,0,0.8);   
+    background-color:rgba(0,0,0,0.5);   
     display:block;
     position:absolute;
     bottom:0px;
@@ -23,9 +24,8 @@
   }
   div.actionicons .tiles a:hover {background-color:#c1c1c1;	}
   div.actionicons .tiles .tilecontent {
-    background: #181647;
+    background: $ms-themePrimary;
     height: 150px;
-    width: 150px;
     overflow: hidden;
     display: block;
     position:relative;
@@ -38,20 +38,6 @@
     cursor:pointer;
   }
   .cdbclear{clear:both;}
-  a.cdbbutton, a.cdbbutton:visited, a.cdbbutton:hover, a.cdbbutton:active, a.cdbbutton:link {
-    margin-top:5px;
-    color: white;
-    display: inline-block;
-    width: auto;
-    padding:5px;
-    border-radius: 4px;
-    text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
-    background-color: #0269c3;
-    text-decoration: none;
-  }
-  a.cdbbutton:hover{
-    background-color: #0074d9;
-  }
   .cdbdescholdertitle{
     display: block;
     padding:15px;
@@ -61,5 +47,17 @@
     padding:15px;
     padding-top:0px;
     height: 100%;
+  }
+  @media all
+  and (max-width: 600px){
+    .mobiletile{
+      width:50%!important;
+    }
+  }
+  @media all
+  and (max-width: 470px){
+    .mobiletile{
+      width:100%!important;
+    }
   }
 }

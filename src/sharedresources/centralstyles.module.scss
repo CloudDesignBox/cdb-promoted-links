@@ -1,0 +1,59 @@
+.noitems{
+    color:#000;
+}
+.heading{
+    font-size:24px;
+    font-weight: 100;
+    font-family: "Segoe UI Web (West European)",Segoe UI,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,sans-serif;
+    color: #505050;
+    padding-bottom:10px;
+    text-align: left;
+}
+a.cdbbutton, a.cdbbutton:visited, a.cdbbutton:hover, a.cdbbutton:active, a.cdbbutton:link {
+    margin-top:20px;
+    color: #1fa2d7;
+    display: inline-block;
+    width: auto;
+    padding:10px;
+    border-radius: 4px;
+    background-color: #fff;
+    text-decoration: none;
+  }
+  a.cdbbutton:hover{
+    background-color: #000;
+    color: #fff;
+  }
+  .cdbplusbuttoncontainer{
+    display: block;
+    text-align: right;
+  }
+  .cdbplusbutton, .cdbplusbuttonleft{
+    display: block;
+    width:47px;
+    height: 47px;
+    background-color: #dddddd;
+    text-align: center;
+    color: #656464;
+    font-size: 30px;
+    float: right;
+    transition: background-color 0.5s linear;
+    transition: color 0.5s linear;
+    text-decoration: none;
+    cursor: pointer;
+  }
+  .cdbplusbuttonleft{
+    float: left;
+  }
+  .cdbplusbutton:hover, .cdbplusbuttonleft:hover{
+    background-color: #656464;
+    color:#fff;
+    text-decoration: none;
+  }
+  .cdbclear{
+    clear: both;
+    height: 0px;
+    color:transparent;
+    width:0px;
+    overflow:hidden;
+    display: block;
+  }

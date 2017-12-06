@@ -1,0 +1,8 @@
+To Install:
+
+•	Upload folder “CDBPromotedLinks” (including the folder itself) into the SiteAssets library at the root site collection (e.g. contoso.sharepoint.com/siteassets). 
+•	Upload the “cloud-design-box-promoted-links.sppkg” file to the AppCatalog, tick the box to make available on all site collections.
+
+
+Upgrades:
+Replace the current files following the install steps above. Please note that upgrading from version 2 or before to version 3 will require you to remove and add the web parts to the page again (due to the large configuration changes) otherwise your web part will appear blank.

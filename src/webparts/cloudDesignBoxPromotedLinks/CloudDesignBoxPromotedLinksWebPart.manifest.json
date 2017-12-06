@@ -16,15 +16,20 @@
   "preconfiguredEntries": [{
     "groupId": "5c03119e-3074-46fd-976b-c60198311f70", // Other
     "group": { "default": "Other" },
-    "title": { "default": "Promoted Links by Cloud Design Box" },
+    "title": { "default": "Promoted Links" },
     "description": { "default": "Displays promoted links like they did in classic mode (only better)!" },
     "officeFabricIconFontName": "Tiles",
     "properties": {
       "description": "Cloud Design Box Promoted Links",
       "imagelibraryname": "Promoted Links",
-      "tilecolour": "#28a1d9",
+      "tilecolour": "#a81735",
       "tileanimation": true,
-      "backgroundsize": "50%"
+      "backgroundsize": "50%",
+      "showtitle": true,
+      "webparttitle": "Promoted Links",
+      "setwidth": "150px",
+      "themecolour": true,
+      "showaddbutton": true
     }
   }]
 }
