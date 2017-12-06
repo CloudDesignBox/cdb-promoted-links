@@ -130,6 +130,7 @@ export default class CloudDesignBoxPromotedLinksWebPartWebPart extends BaseClien
           if(this.properties.themecolour==true){
             cdbcolour=``;
           }
+          //if tile size isn't set - make default
           if(this.properties.setwidth==null || typeof this.properties.setwidth === 'undefined'){
             this.properties.setwidth="150px";
           }
