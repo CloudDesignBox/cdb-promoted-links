@@ -92,7 +92,7 @@ export default class CloudDesignBoxPromotedLinksWebPartWebPart extends BaseClien
 
   //load Promoted List Data
   private _getListData(): Promise<ISPLists> {
-    return this.context.spHttpClient.get(this.context.pageContext.web.absoluteUrl + `/_api/web/lists/getbytitle('${escape(this.properties.imagelibraryname)}')/Items?$select=Title,BackgroundImageLocation,Description,LinkLocation,LaunchBehavior,Order&$orderby=TileOrder,Title`, SPHttpClient.configurations.v1)
+    return this.context.spHttpClient.get(this.context.pageContext.web.absoluteUrl + `/_api/web/lists/getbytitle('${escape(this.properties.imagelibraryname)}')/Items?$select=Title,BackgroundImageLocation,Description,LinkLocation,LaunchBehavior,Order&$top=4999&$orderby=TileOrder,Title`, SPHttpClient.configurations.v1)
       .then((response: SPHttpClientResponse) => {
         return response.json();
       });
