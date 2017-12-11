@@ -177,6 +177,8 @@ export default class CloudDesignBoxPromotedLinksWebPartWebPart extends BaseClien
     if(this.properties.tileanimation == true)
     {
       jQuery(() => {
+        //remove any previous instances
+        jQuery("." + styles.tilecontent).unbind();
         jQuery("." + styles.tilecontent)
           .mouseenter(function() {
             jQuery(this).children("." + styles.cdbdescholder).children("." + styles.cdbdescholderdesc).stop();
