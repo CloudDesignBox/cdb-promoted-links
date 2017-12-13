@@ -25,6 +25,10 @@ import * as strings from 'CloudDesignBoxPromotedLinksWebPartStrings';
 //load jquery
 import * as jQuery from 'jquery';
 
+//include js pnp
+import pnp, { PermissionKind, Web } from "sp-pnp-js";
+
+
 export interface IPromotedLinksByCloudDesignBoxWebPartProps {
   description: string;
   imagelibraryname: string;
@@ -147,26 +151,35 @@ export default class CloudDesignBoxPromotedLinksWebPartWebPart extends BaseClien
             </div>
           </div>`;
         });
-        //add new link button
-        if(this.properties.showaddbutton == true){
-          html += `<div style="width:${this.properties.setwidth};display:inline-block;" class="${styles.mobiletile}">
+      }else{
+        html = `There are no links in this list.<br /><br />`;                
+      }
+      
+      //pnp get web from url
+      let web = new Web(this.context.pageContext.web.absoluteUrl).lists.getByTitle(this.properties.imagelibraryname).currentUserHasPermissions(PermissionKind.AddListItems).then(perms => {
+        console.log(perms);
+        console.log("show button " + this.properties.showaddbutton);
+        if(this.properties.showaddbutton == true && perms){
+          console.log("here");
+          let htmlAdd:string = `<div style="width:${this.properties.setwidth};display:inline-block;" class="${styles.mobiletile}">
             <div>
               <div class="${styles.tiles}">
                 <div class="${centralstyles.cdbplusbuttoncontainer}"><a href="${escape(this.context.pageContext.web.absoluteUrl)}/Lists/${this.properties.imagelibraryname}/NewForm.aspx?Source=${encodeURIComponent(window.location.href).replace(".","%2E")}" class="${centralstyles.cdbplusbuttonleft}">&#43;</a><span class="${centralstyles.cdbclear}">add</span></div>
               </div>
             </div>
           </div>`;
+          //render results
+          const listContainer2: Element = this.domElement.querySelector(`#${styles.row}`);
+          listContainer2.insertAdjacentHTML('beforeend', htmlAdd);
         }
-      }else{
-        html = `There are no links in this list.<br />`;                
-      }
+      });      
     }else{
         html = `Open the web part properties and select a list that already exists on the site or create a new promoted links list on this site using the link below.<br /><a href="${escape(this.context.pageContext.web.absoluteUrl)}/_layouts/15/viewlsts.aspx" class="${centralstyles.cdbbutton}">Manage Lists</a>`;
     }
 
     //render results
     const listContainer: Element = this.domElement.querySelector(`#${styles.row}`);
-    listContainer.innerHTML = html;
+    listContainer.insertAdjacentHTML('afterbegin', html);
 
     //load jQuery features
     jQuery(() => {
@@ -193,6 +206,8 @@ export default class CloudDesignBoxPromotedLinksWebPartWebPart extends BaseClien
     
     //end
   }
+
+  
 
   public render(): void {
     let temphtml:string = `

@@ -16,7 +16,8 @@
       "path": "https://code.jquery.com/jquery-2.1.1.min.js",
       "globalName": "jQuery"
     },
-    "sp-client-custom-fields": "node_modules/sp-client-custom-fields/dist/sp-client-custom-fields.bundle.js"
+    "sp-client-custom-fields": "node_modules/sp-client-custom-fields/dist/sp-client-custom-fields.bundle.js",
+    "sp-pnp-js": "https://cdnjs.cloudflare.com/ajax/libs/sp-pnp-js/3.0.2/pnp.min.js"
   },
   "localizedResources": {
     "CloudDesignBoxPromotedLinksWebPartStrings": "lib/webparts/cloudDesignBoxPromotedLinks/loc/{locale}.js",
