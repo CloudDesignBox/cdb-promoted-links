@@ -154,8 +154,8 @@ export default class CloudDesignBoxPromotedLinksWebPartWebPart extends BaseClien
       }else{
         html = `There are no links in this list.<br /><br />`;                
       }
-      
-      //pnp get web from url
+
+      //pnp get web from url, then get list and check users permission level
       let web = new Web(this.context.pageContext.web.absoluteUrl).lists.getByTitle(this.properties.imagelibraryname).currentUserHasPermissions(PermissionKind.AddListItems).then(perms => {
         console.log(perms);
         console.log("show button " + this.properties.showaddbutton);
