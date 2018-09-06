@@ -112,44 +112,46 @@ export default class CloudDesignBoxPromotedLinksWebPartWebPart extends BaseClien
       if (items.length > 0){
         //loop through items and add to html
         items.forEach((item: ISPList) => {
-          let cdbcolour: string = `background-color:${this.properties.tilecolour};`;
-          let cdblaunchbeh: string = "";
-          let cdbbackgimage:string = "";
-          let cdbdescription:string = "Click here";
-          //validate launch beha
-          if(item.LaunchBehavior == "New tab"){
-            cdblaunchbeh=`window.open('${item.LinkLocation['Url']}','_blank');`;
-          }else{
-            cdblaunchbeh=`location.href='${item.LinkLocation['Url']}';`;
-          }
-          //validate bg image
-          if(item.BackgroundImageLocation != null){
-            cdbbackgimage=item.BackgroundImageLocation['Url'];
-          }
-          //validate desc
-          if(item.Description != null){
-            cdbdescription=item.Description;
-          }
-          //if theming is used, don't set bg colour
-          if(this.properties.themecolour==true){
-            cdbcolour=``;
-          }
-          //if tile size isn't set - make default
-          if(this.properties.setwidth==null || typeof this.properties.setwidth === 'undefined'){
-            this.properties.setwidth="150px";
-          }
-          html+=`<div style="width:${this.properties.setwidth};display:inline-block;" class="${styles.mobiletile}">
-            <div>
-              <div class="${styles.tiles}">
-                <div class="${styles.tilecontent} ${styles.tpmouse}" style="${cdbcolour}background-image:url('${cdbbackgimage}');background-size:${this.properties.backgroundsize};position:relative;" onclick="${cdblaunchbeh}">
-                  <div class="${styles.cdbdescholder}">
-                    <div class="${styles.cdbdescholdertitle}"><span>${item.Title}</span></div>
-                    <div class="${styles.cdbdescholderdesc}"><span>${cdbdescription}</span></div>
+          if(item.LinkLocation && item.Title){
+            let cdbcolour: string = `background-color:${this.properties.tilecolour};`;
+            let cdblaunchbeh: string = "";
+            let cdbbackgimage:string = "";
+            let cdbdescription:string = "Click here";
+            //validate launch beha
+            if(item.LaunchBehavior == "New tab"){
+              cdblaunchbeh=`window.open('${item.LinkLocation['Url']}','_blank');`;
+            }else{
+              cdblaunchbeh=`location.href='${item.LinkLocation['Url']}';`;
+            }
+            //validate bg image
+            if(item.BackgroundImageLocation != null){
+              cdbbackgimage=item.BackgroundImageLocation['Url'];
+            }
+            //validate desc
+            if(item.Description != null){
+              cdbdescription=item.Description;
+            }
+            //if theming is used, don't set bg colour
+            if(this.properties.themecolour==true){
+              cdbcolour=``;
+            }
+            //if tile size isn't set - make default
+            if(this.properties.setwidth==null || typeof this.properties.setwidth === 'undefined'){
+              this.properties.setwidth="150px";
+            }
+            html+=`<div style="width:${this.properties.setwidth};display:inline-block;" class="${styles.mobiletile}">
+              <div>
+                <div class="${styles.tiles}">
+                  <div class="${styles.tilecontent} ${styles.tpmouse}" style="${cdbcolour}background-image:url('${cdbbackgimage}');background-size:${this.properties.backgroundsize};position:relative;" onclick="${cdblaunchbeh}">
+                    <div class="${styles.cdbdescholder}">
+                      <div class="${styles.cdbdescholdertitle}"><span>${item.Title}</span></div>
+                      <div class="${styles.cdbdescholderdesc}"><span>${cdbdescription}</span></div>
+                    </div>
                   </div>
                 </div>
               </div>
-            </div>
-          </div>`;
+            </div>`;
+          }
         });
       }else{
         html = `There are no links in this list.<br /><br />`;                
