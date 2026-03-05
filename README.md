@@ -1,3 +1,4 @@
+<B>Please note this repository is no longer maintained (2018). Cloud Design Box have a new version of this web part as part of their intranet solution.</B>
 <h1>Cloud Design Box Promoted Links Web Part</h1>
 <p>This web part replicates the classic Promoted Links Web Part but with added features such as web part properties to change the background colour, size of background image and to select which promoted link list to use. </p>
 <p>For more information onthe full Cloud Design Box learning platform for modern SharePoint or custom workflows and design, <a href="https://www.clouddesignbox.co.uk">Contact us via the website.</a> </p>
