@@ -11,15 +11,6 @@ for historical reference only.</p>
 <p>For more information onthe full Cloud Design Box learning platform for modern SharePoint or custom workflows and design, <a href="https://www.clouddesignbox.co.uk">Contact us via the website.</a> </p>
 <img src="https://github.com/CloudDesignBox/cdb-promoted-links/blob/master/preview.gif" alt="preview" />
 
-<h1>Download and install latest version</h1>
-
-<p><a href="https://github.com/CloudDesignBox/cdb-promoted-links/raw/master/Installation.zip">Click here to download install files</a></p>
-
-<b>Installation instructions</b>
-<p>- Unzip the file and open the installation folder</p>
-<p>-	Upload folder “CDBPromotedLinks” (including the folder itself) into the SiteAssets library at the root site collection (e.g. contoso.sharepoint.com/siteassets).</p>
-<p>-	Upload the “cloud-design-box-promoted-links.sppkg” file to the AppCatalog, tick the box to make available on all site collections.
-</p>
 <b>Updating instructions</b>
 <p>Follow the installation instructions above but replace all the files and check in the sppkg file after upload. </p>
 
